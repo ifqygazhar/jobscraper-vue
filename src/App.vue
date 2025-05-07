@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import Jobstreet from "./components/icon/Jobstreet.vue";
 import Button from "./components/ui/Button.vue";
 import Card from "./components/ui/Card.vue";
 import Category from "./components/ui/Category.vue";
 import Input from "./components/ui/Input.vue";
+
+const items = [1, 2, 3, 4, 5];
 </script>
 
 <template>
@@ -19,7 +22,9 @@ import Input from "./components/ui/Input.vue";
       <Input /> <Button :px="10" :py="20" />
     </div>
     <div class="flex flex-row flex-wrap justify-center items-center">
-      <Category /><Category /><Category /><Category /><Category />
+      <template v-for="(item, index) in items" :key="index">
+        <Category :title="'HEYYY'" :icon="Jobstreet" />
+      </template>
     </div>
     <div class="flex flex-col justify-center items-center">
       <Card />
