@@ -1,0 +1,86 @@
+### Test api/Glints API - Default parameters
+GET http://localhost:5000/api/glints
+
+### Test api/Glints API - With custom parameters
+GET http://localhost:5000/api/glints?work=Software Engineer&job_type=FULL_TIME&option_work=REMOTE&page=1&location_id=JABODETABEK&location_name=Jabodetabek
+
+### Test api/Glints API - Part time internship
+GET http://localhost:5000/api/glints?work=Data Analyst&job_type=INTERNSHIP&option_work=HYBRID&page=1&location_id=78d63064-78a1-4577-8516-036a6c5e903e&location_name=DKI Jakarta
+
+### Test api/Glints API - Contract work
+GET http://localhost:5000/api/glints?work=UI Designer&job_type=CONTRACT&option_work=ONSITE&page=2&location_id=86a3dc56-1bd7-4cd3-8225-d3e4b976e552&location_name=Bandung, Jawa Barat
+
+### Test api/JobStreet API - Default parameters
+GET http://localhost:5000/api/jobstreet
+
+### Test api/JobStreet API - Indonesia with custom parameters
+GET http://localhost:5000/api/jobstreet?work=Software Developer&location=Jakarta&country=id&page=1
+
+### Test api/JobStreet API - Malaysia
+GET http://localhost:5000/api/jobstreet?work=Data Scientist&location=Kuala Lumpur&country=my&page=1
+
+### Test api/JobStreet API - Singapore
+GET http://localhost:5000/api/jobstreet?work=Product Manager&location=Singapore&country=sg&page=1
+
+### Test api/JobStreet API - Thailand
+GET http://localhost:5000/api/jobstreet?work=Frontend Developer&location=Bangkok&country=th&page=1
+
+### Test api/JobStreet API - Page 2
+GET http://localhost:5000/api/jobstreet?work=Backend Developer&location=Surabaya&country=id&page=2
+
+### Test api/RemoteOK API - Default parameters
+GET http://localhost:5000/api/remoteok
+
+### Test api/RemoteOK API - Python jobs
+GET http://localhost:5000/api/remoteok?keywords=python
+
+### Test api/RemoteOK API - JavaScript jobs
+GET http://localhost:5000/api/remoteok?keywords=javascript
+
+### Test api/RemoteOK API - React jobs
+GET http://localhost:5000/api/remoteok?keywords=react
+
+### Test api/RemoteOK API - DevOps jobs
+GET http://localhost:5000/api/remoteok?keywords=devops
+
+### Test api/RemoteOK API - Full Stack jobs
+GET http://localhost:5000/api/remoteok?keywords=full-stack
+
+### Test api/Indeed API - Default parameters
+GET http://localhost:5000/api/indeed
+
+### Test api/Indeed API - Indonesia with custom parameters
+GET http://localhost:5000/api/indeed?keyword=software engineer&location=Jakarta&country=id&page=0
+
+### Test api/Indeed API - With location
+GET http://localhost:5000/api/indeed?keyword=data analyst&location=Bandung&country=id&page=0
+
+### Test api/Indeed API - Different keyword
+GET http://localhost:5000/api/indeed?keyword=product manager&location=Surabaya&country=id&page=1
+
+### Test api/Indeed API - Frontend jobs
+GET http://localhost:5000/api/indeed?keyword=frontend developer&location=Yogyakarta&country=id&page=0
+
+### Test Disnaker Bandung API - Default parameters
+GET http://localhost:5000/api/disnaker_bandung
+
+### Test Disnaker Bandung API - Page 1
+GET http://localhost:5000/api/disnaker_bandung?page=1
+
+### Test Disnaker Bandung API - Page 2
+GET http://localhost:5000/api/disnaker_bandung?page=2
+
+### Test Disnaker Bandung API - Page 3
+GET http://localhost:5000/api/disnaker_bandung?page=3
+
+### Test error handling - Invalid api/Glints job_type
+GET http://localhost:5000/api/glints?job_type=INVALID_TYPE
+
+### Test error handling - Invalid api/Glints option_work
+GET http://localhost:5000/api/glints?option_work=INVALID_OPTION
+
+### Test error handling - Invalid page number
+GET http://localhost:5000/api/glints?page=0
+
+### Test error handling - Non-numeric page
+GET http://localhost:5000/api/glints?page=abc
