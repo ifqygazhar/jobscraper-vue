@@ -1,11 +1,3 @@
-HTTP/1.1 200 OK
-Server: Werkzeug/3.1.3 Python/3.13.2
-Date: Sun, 15 Jun 2025 14:56:12 GMT
-Content-Type: application/json
-Content-Length: 47167
-Access-Control-Allow-Origin: *
-Connection: close
-
 {
   "data": {
     "jobs": [
@@ -16,4 +8,7 @@ Connection: close
         "location": "Kebayoran Lama",
         "salary": "Rp 5,1\u00a0jt-7\u00a0jt",
         "title": "Programmer"
-      },
+      }
+    ]
+  }
+}

@@ -4,11 +4,11 @@
       'bg-black ': isCardActive,
       'border-2 bg-transparent ': !isCardActive,
     }"
-    class="rounded-[0.8rem] p-4 w-[80vw] sm:w-[70vw] md:w-[60vw] lg:w-[58vw] xl:w-[58vw] overflow-auto cursor-pointer"
+    class="rounded-[0.8rem] p-4 w-full overflow-auto cursor-pointer"
     @click="toggleCardActive"
   >
     <div class="flex flex-col flex-wrap">
-      <div class="flex flex-row justify-between mb-1.5">
+      <div class="flex flex-row justify-between">
         <p :class="isCardActive ? 'text-white ' : 'text-black '">Programmer</p>
         <div class="flex flex-row flex-wrap items-center">
           <div

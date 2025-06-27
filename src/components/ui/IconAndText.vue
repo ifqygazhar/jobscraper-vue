@@ -39,12 +39,12 @@ const props = defineProps({
   },
   title: {
     type: String,
-    required: true,
+    required: false,
     default: "N/A",
   },
   icon: {
     type: Object,
-    required: true,
+    required: false,
     default: MapPinIcon,
   },
 });

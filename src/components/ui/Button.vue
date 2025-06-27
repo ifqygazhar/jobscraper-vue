@@ -1,7 +1,7 @@
 <template>
   <button
     @click="onClick"
-    :class="`bg-black py-${py} px-${px} my-2 mr-2 ml-0 rounded-[0.4rem] cursor-pointer`"
+    :class="`bg-black pl-${pl} py-${py} my-2 ml-2 rounded-[0.4rem] cursor-pointer`"
   >
     <div class="font-bold text-white text-[1.2rem]">
       <div v-if="primary" class="flex justify-start">
@@ -34,12 +34,12 @@ defineProps({
     required: false,
     default: 1.3,
   },
-  px: {
+  py: {
     type: Number,
     required: false,
     default: 5,
   },
-  py: {
+  pl: {
     type: Number,
     required: false,
     default: 0,

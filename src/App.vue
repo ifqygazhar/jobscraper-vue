@@ -1,33 +1,49 @@
 <script setup lang="ts">
-import Jobstreet from "./components/icon/Jobstreet.vue";
+import Glints from "./components/icon/Glints.vue";
 import Button from "./components/ui/Button.vue";
 import Card from "./components/ui/Card.vue";
 import Category from "./components/ui/Category.vue";
 import Input from "./components/ui/Input.vue";
+import DropDown from "./components/ui/Dropdown.vue";
 
-const items = [1, 2, 3, 4, 5];
+const items = [1, 2, 3, 4, 5, 6];
 </script>
 
 <template>
-  <div class="flex flex-col justify-center font-montserrat h-screen">
+  <div
+    class="flex flex-col justify-center items-center font-montserrat h-screen w-full"
+  >
     <div
-      class="font-bold text-black text-center text-[min(10vw,1.7rem)] lg:text-[3rem]"
+      class="flex flex-col items-center justify-center w-2/2 px-4 md:w-1/2 md:px-0"
     >
-      Easy way to find a job 🔎
-    </div>
-    <div class="font-light text-black text-center text-[min(10vw,1.3rem)]">
-      Just search in here
-    </div>
-    <div class="flex flex-row justify-center">
-      <Input /> <Button :px="10" :py="20" />
-    </div>
-    <div class="flex flex-row flex-wrap justify-center items-center">
-      <template v-for="(item, index) in items" :key="index">
-        <Category :title="'HEYYY'" :icon="Jobstreet" />
-      </template>
-    </div>
-    <div class="flex flex-col justify-center items-center">
-      <Card />
+      <div
+        class="font-bold text-black text-center text-[min(10vw,1.7rem)] lg:text-[2.5rem]"
+      >
+        Easy way to find a job 🔎
+      </div>
+      <div class="font-light text-black text-center text-[min(10vw,1.3rem)]">
+        Just search in here
+      </div>
+      <div class="flex flex-row justify-center w-full">
+        <Input /> <Button :pl="10" :py="20" />
+      </div>
+      <div class="flex flex-row justify-center w-full">
+        <DropDown />
+      </div>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-rows-2 lg:justify-between items-center w-full gap-x-2"
+      >
+        <template v-for="(item, index) in items" :key="index">
+          <Category
+            :title="'Jobstreet'"
+            :icon="Glints"
+            :iconProps="{ isHaveBackground: true }"
+          />
+        </template>
+      </div>
+      <div class="flex flex-col justify-center items-center w-full gap-2">
+        <Card />
+      </div>
     </div>
   </div>
 </template>
