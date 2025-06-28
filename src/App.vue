@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import Glints from "./components/icon/Glints.vue";
 import Button from "./components/ui/Button.vue";
 import Card from "./components/ui/Card.vue";
 import Input from "./components/ui/Input.vue";
 import DropDown from "./components/ui/Dropdown.vue";
-import RemoteOk from "./components/icon/RemoteOk.vue";
-import Kemnaker from "./components/icon/Kemnaker.vue";
 import { BriefcaseIcon } from "@heroicons/vue/20/solid";
+import { platformJobOptions } from "./const/platform";
 
 const items = [1, 2, 3, 4];
 </script>
@@ -34,7 +32,11 @@ const items = [1, 2, 3, 4];
           <DropDown />
         </div>
         <div class="w-full sm:w-1/2">
-          <DropDown :title="`Platform Job`" :icon="BriefcaseIcon" />
+          <DropDown
+            :title="`Platform Job`"
+            :icon="BriefcaseIcon"
+            :options="platformJobOptions"
+          />
         </div>
       </div>
       <!-- <div

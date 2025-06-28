@@ -36,10 +36,14 @@
         class="p-3 hover:bg-gray-100 cursor-pointer border-b border-gray-200 last:border-b-0"
         @click="selectOption(option)"
       >
-        <div class="flex items-center gap-2 min-w-0">
+        <div class="flex items-center gap-3 min-w-0">
+          <!-- Gunakan icon custom jika ada, fallback ke icon default -->
           <component
-            :is="icon"
+            :is="option.icon || icon"
             class="size-4 text-gray-600 flex-shrink-0"
+            :isHaveBackground="true"
+            :width="16"
+            :height="16"
           ></component>
           <span class="truncate">{{ option.label }}</span>
         </div>
@@ -63,6 +67,7 @@ interface Option {
   id: number | string;
   label: string;
   value: any;
+  icon?: any; // Tambahkan icon property
 }
 
 const props = defineProps({
