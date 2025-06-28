@@ -2,11 +2,13 @@
 import Glints from "./components/icon/Glints.vue";
 import Button from "./components/ui/Button.vue";
 import Card from "./components/ui/Card.vue";
-import Category from "./components/ui/Category.vue";
 import Input from "./components/ui/Input.vue";
 import DropDown from "./components/ui/Dropdown.vue";
+import RemoteOk from "./components/icon/RemoteOk.vue";
+import Kemnaker from "./components/icon/Kemnaker.vue";
+import { BriefcaseIcon } from "@heroicons/vue/20/solid";
 
-const items = [1, 2, 3, 4, 5, 6];
+const items = [1, 2, 3, 4];
 </script>
 
 <template>
@@ -27,20 +29,25 @@ const items = [1, 2, 3, 4, 5, 6];
       <div class="flex flex-row justify-center w-full">
         <Input /> <Button :pl="10" :py="20" />
       </div>
-      <div class="flex flex-row justify-center w-full">
-        <DropDown />
+      <div class="flex flex-col sm:flex-row justify-center w-full gap-2">
+        <div class="w-full sm:w-1/2">
+          <DropDown />
+        </div>
+        <div class="w-full sm:w-1/2">
+          <DropDown :title="`Platform Job`" :icon="BriefcaseIcon" />
+        </div>
       </div>
-      <div
+      <!-- <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-rows-2 lg:justify-between items-center w-full gap-x-2"
       >
         <template v-for="(item, index) in items" :key="index">
           <Category
             :title="'Jobstreet'"
-            :icon="Glints"
+            :icon="Kemnaker"
             :iconProps="{ isHaveBackground: true }"
           />
         </template>
-      </div>
+      </div> -->
       <div class="flex flex-col justify-center items-center w-full gap-2">
         <Card />
       </div>

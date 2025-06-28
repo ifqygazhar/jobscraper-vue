@@ -5,21 +5,21 @@
       @click="toggleDropdown"
     >
       <div class="flex flex-row items-center gap-2 justify-between w-full">
-        <div class="flex flex-row items-center gap-2">
+        <div class="flex flex-row items-center gap-2 flex-1 min-w-0">
           <component
             :is="icon"
-            class="size-5 text-black bg-transparent"
+            class="size-5 text-black bg-transparent flex-shrink-0"
           ></component>
           <input
             v-model="searchValue"
             :placeholder="title"
-            class="outline-none bg-transparent flex-1"
+            class="outline-none bg-transparent flex-1 min-w-0"
             @input="filterOptions"
             @click.stop
           />
         </div>
         <ChevronDownIcon
-          class="size-5 text-black bg-transparent transition-transform duration-200"
+          class="size-5 text-black bg-transparent transition-transform duration-200 flex-shrink-0"
           :class="{ 'rotate-180': isOpen }"
         />
       </div>
@@ -28,7 +28,7 @@
     <!-- Dropdown Options -->
     <div
       v-if="isOpen"
-      class="absolute top-full left-0 right-0 bg-white border-2 border-black rounded-md mt-1 max-h-60 overflow-y-auto z-10"
+      class="absolute top-full left-0 w-full bg-white border-2 border-black rounded-md mt-1 max-h-60 overflow-y-auto z-10"
     >
       <div
         v-for="option in filteredOptions"
@@ -36,9 +36,12 @@
         class="p-3 hover:bg-gray-100 cursor-pointer border-b border-gray-200 last:border-b-0"
         @click="selectOption(option)"
       >
-        <div class="flex items-center gap-2">
-          <component :is="icon" class="size-4 text-gray-600"></component>
-          <span>{{ option.label }}</span>
+        <div class="flex items-center gap-2 min-w-0">
+          <component
+            :is="icon"
+            class="size-4 text-gray-600 flex-shrink-0"
+          ></component>
+          <span class="truncate">{{ option.label }}</span>
         </div>
       </div>
 
