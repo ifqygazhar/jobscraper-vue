@@ -1,7 +1,7 @@
 <template>
   <div class="relative w-full">
     <div
-      class="flex flex-row justify-start mb-2 p-4 rounded-md w-full border-2 border-black cursor-pointer"
+      class="flex flex-row justify-start p-4 rounded-md w-full h-full border-2 border-black cursor-pointer"
       @click="toggleDropdown"
     >
       <div class="flex flex-row items-center gap-2 justify-between w-full">

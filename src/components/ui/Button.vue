@@ -1,7 +1,7 @@
 <template>
   <button
     @click="onClick"
-    :class="`bg-black pl-${pl} py-${py} my-2 ml-2 rounded-[0.4rem] cursor-pointer`"
+    :class="`bg-black rounded-[0.4rem] cursor-pointer h-15 flex justify-center items-center`"
   >
     <div class="font-bold text-white text-[1.2rem]">
       <div v-if="primary" class="flex justify-start">
