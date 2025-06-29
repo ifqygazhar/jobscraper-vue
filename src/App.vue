@@ -111,6 +111,26 @@ const debouncedSearch = () => {
         <!-- Job Cards -->
         <template v-else-if="glintsStore.jobs.length > 0">
           <Card v-for="job in glintsStore.jobs" :key="job.link" :job="job" />
+
+          <!-- Load More Button -->
+          <div
+            v-if="glintsStore.hasMore"
+            class="w-full flex justify-center mt-4"
+          >
+            <div
+              @click="glintsStore.loadMoreJobs()"
+              :disabled="glintsStore.loadingMore"
+              class="w-full bg-jobstreet mb-2 py-2 px-2 text-white font-bold rounded-md cursor-pointer flex justify-center items-center"
+            >
+              <template v-if="glintsStore.loadingMore"> Loading... </template>
+              <template v-else> Load More Jobs </template>
+            </div>
+          </div>
+
+          <!-- End of Results Message -->
+          <div v-else class="text-gray-500 text-center py-4">
+            No more jobs to load
+          </div>
         </template>
 
         <!-- No Results -->
